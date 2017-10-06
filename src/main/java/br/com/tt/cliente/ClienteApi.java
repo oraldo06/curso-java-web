@@ -21,7 +21,7 @@ public class ClienteApi {
 		
 	}
 	
-	@GetMapping("{id}")
+	@GetMapping("/{id}")
 	Cliente cliente(@PathVariable(name="id") Integer id){
 		List<Cliente> clientes = service.consulta();
 		if(id > clientes.size()){

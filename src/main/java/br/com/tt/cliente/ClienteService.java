@@ -1,24 +1,25 @@
 package br.com.tt.cliente;
 
-import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
 public class ClienteService {
-	
-	List<Cliente> consulta(){
+	@Autowired
+	private ClienteRepository repository;
+
+	List<Cliente> consulta() {
+
+		return repository.findAll();
 		
-		List<Cliente> clientes = new ArrayList<>();
-		clientes.add(new Cliente(1L, "João", "03258000112", new Date()));
-		clientes.add(new Cliente(2L, "Maria", "02587654789", new Date()));
-		clientes.add(new Cliente(3L, "Pedro", "09874654789", new Date()));
-		clientes.add(new Cliente(4L, "Mario", "05874547896", new Date()));
-		clientes.add(new Cliente(5L, "Montito", "03599845632", new Date()));
+
+	}
+
+	public void salvar(Cliente cliente) {
+		repository.save(cliente);
 		
-		return clientes;
 	}
 
 }
