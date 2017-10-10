@@ -38,7 +38,7 @@ public class ClienteService {
 	public CadastroReceita consultaReceita(String cnpj) throws Exception{
 		ObjectMapper mapper = new ObjectMapper();
 		String url = "https://www.receitaws.com.br/v1/cnpj/27865757000102";
-		String receitaJson = HttpClient.get("");
+		String receitaJson = HttpClient.get(url);
 		CadastroReceita cadReceita = mapper.readValue(receitaJson, CadastroReceita.class);
 		System.out.println(cadReceita.getFantasia());
 		
