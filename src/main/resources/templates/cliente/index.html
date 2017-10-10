@@ -5,7 +5,7 @@
 	<div class="panel-body">
 		<a class="btn btn-sm btn-primary" style="margin: 15px"
 			href="/cliente/cadastro"> Cadastrar novo </a>
-		<div class="table-responsive" style="margin: 15pxSSSS">
+		<div class="table-responsive" style="margin: 15px">
 			<table
 				class="table table-sm table-striped table-hover table_bordered">
 				<thead>
@@ -21,7 +21,7 @@
 					<tr th:each="c : ${clientes}">
 						<td th:text="${c.id}"></td>
 						<td th:text="${c.nome}"></td>
-						<td th:text="${beans.cv.cpf(c.cpf)}"></td>
+						<td th:text="${#beans.cv.cpf(c.cpf)}"></td>
 						<td th:text="${#dates.format(c.data, 'dd/MM/yyyy')}"></td>
 						<td>
 							<div class="btn-group pull-right"></div> <a
